@@ -1,9 +1,16 @@
-import { readFile } from "node:fs/promises";
+import { createConnection } from "mysql";
+function main() {
+  console.log("MYSQL DEMO");
+  let connectionUri = {
+    host: "localhost",
+    user: "root",
+    password: "rohit123",
+    database: "webTech",
+  };
 
-async function main() {
-  console.log("Read File Demo");
-  let filePath = "D:Web-Pgmg-TechnologiesWeb_Html_Pgmgday_2\1.html";
-  let output = await readFile(filePath, { encoding: "utf-8" });
-  console.log(output);
+  let connection = createConnection(connectionUri);
+  connection.connect();
+  console.log("Connection Done!!");
+  connection.end();
 }
 main();
