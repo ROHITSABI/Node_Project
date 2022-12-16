@@ -1,10 +1,9 @@
-import { sum } from "./mymath.js";
-import { mul } from "./mymath.js";
+import { readFile } from "node:fs/promises";
 
-function main() {
-  let output = sum(1, 1);
-  console.log("Sum", output);
-  let output1 = mul(2, 4);
-  console.log("Mul", output1);
+async function main() {
+  console.log("Read File Demo");
+  let filePath = "D:Web-Pgmg-TechnologiesWeb_Html_Pgmgday_2\1.html";
+  let output = await readFile(filePath, { encoding: "utf-8" });
+  console.log(output);
 }
 main();
