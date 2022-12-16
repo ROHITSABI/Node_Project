@@ -1,16 +1,17 @@
 import { createConnection } from "mysql";
 function main() {
-  console.log("MYSQL DEMO");
+  console.log("MYSQL QUERY DEMO");
   let connectionUri = {
     host: "localhost",
     user: "root",
     password: "rohit123",
-    database: "webTech",
+    database: "webtech",
   };
 
   let connection = createConnection(connectionUri);
   connection.connect();
-  console.log("Connection Done!!");
+  let sql = `Insert into message (message,reply) values('Hello World',0)`;
+  connection.query(sql);
   connection.end();
 }
 main();
