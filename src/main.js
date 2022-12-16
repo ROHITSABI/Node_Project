@@ -10,8 +10,10 @@ function main() {
 
   let connection = createConnection(connectionUri);
   connection.connect();
-  let sql = `Insert into message (message,reply) values('Hello World',0)`;
-  connection.query(sql);
+  let sql = `select * from message`;
+  connection.query(sql, (error, result) => {
+    console.log(result);
+  });
   connection.end();
 }
 main();
