@@ -10,7 +10,9 @@ function main() {
 
   let connection = createConnection(connectionUri);
   connection.connect();
-  let sql = `Insert into message (message,reply) values('Hello World',0)`;
+
+  //Using ID because i'm using primary key(id)
+  let sql = `Insert into message (id,message,reply) values(2,'Hello Universe',0)`;
   connection.query(sql);
   connection.end();
 }
